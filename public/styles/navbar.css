@@ -3,6 +3,7 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   font-family: "Bungee", sans-serif;
+  position: relative;
 }
 
 .nav-content {
@@ -17,4 +18,12 @@ nav {
   align-items: center;
   font-family: "Sans Source Pro", sans-serif;
   flex-direction: column;  
+}
+
+.angle-down-arrow {
+  color: red;
+}
+
+.nav-logo {
+  font-size: 1.5em;
 }
