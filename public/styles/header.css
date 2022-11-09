@@ -3,7 +3,13 @@ header {
   background-image: url("/images/3px-tile.png");
   display: flex;
   height: 400px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.avatar-name {
+  color: white;
+  font-family: "Sans Source Pro", sans-serif;
 }

@@ -1,9 +1,11 @@
 nav {
+  z-index: 9999;
   height: 120px;
+  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   font-family: "Bungee", sans-serif;
-  position: relative;
+  position: fixed;
 }
 
 .nav-content {
