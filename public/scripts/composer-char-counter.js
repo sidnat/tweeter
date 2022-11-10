@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#tweet-text").on("input", function() {
+  $("#tweet-text-field").on("input", function() {
     const textAreaLength = this.value.length;
     const remainingLength = 140 - textAreaLength;
     const elem = $(".counter");

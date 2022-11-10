@@ -31,7 +31,7 @@ const data = [
 
 $(document).ready(function () {
   const createTweetElement = (tweetData) => {
-    const tweet = `
+    const $tweet = `
       <article class="tweet">
         <header class="username">
           <div class="pic-username">
@@ -55,28 +55,27 @@ $(document).ready(function () {
       </article>
     `
 
-    return tweet
-  }
-
+    return $tweet
+  };
+  
   const renderTweets = (arrOfTweets) => {
     for (let tweet of arrOfTweets) {
       $('.tweets-container').append(createTweetElement(tweet));
     }
-  } 
+  };
 
   renderTweets(data);
+  
+  $('.new-tweet form').submit(function(event) {
+    event.preventDefault();
+    const serializedData = $(".new-tweet form").serialize()
+    console.log(serializedData);
+    
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: serializedData
+    });
+  });
 });
 
-
-
-// $(function() {
-//   const $button = $('#load-more-posts');
-//   $button.on('click', function () {
-//     console.log('Button clicked, performing ajax call...');
-//     $.ajax('more-posts.html', { method: 'GET' })
-//     .then(function (morePostsHtml) {
-//       console.log('Success: ', morePostsHtml);
-//       $button.replaceWith(morePostsHtml);
-//     });
-//   });
-// });
