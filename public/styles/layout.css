@@ -28,13 +28,14 @@ nav {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.container {
-  justify-content: center;
-  margin: 0 5%;
-  background-color: #f4f1ec;
-}
-
 .nav-spacer {
   position: relative;
   top: 120px
+}
+
+main.container {
+  padding: 0.1em;
+  justify-content: center;
+  margin: 0 5%;
+  background-color: #f4f1ec;
 }
