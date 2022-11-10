@@ -53,31 +53,14 @@
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets/">
-            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text-field"></textarea>
             <div class="submit-container">
               <button class="tweet-button" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
         </section>
-        <section class="tweet-container">
-          <article class="tweet">
-            <header class="username">
-              <p>Newton</p>
-              <p class="userhandle">@SirIsaac</p>
-            </header class="username">
-            <div class="posted-tweet">
-              <p>If I have seen further it is by standing on the shoulders of giants</p>
-            </div>
-            <footer class="metadata">
-              <p>10 days ago</p>
-              <div class="retweet-icons">
-                <i class="fa-solid fa-flag icon"></i>
-                <i class="fa-solid fa-retweet icon"></i>
-                <i class="fa-solid fa-heart icon"></i>
-              </div>
-            </footer>
-          </article>
+        <section class="tweets-container">
         </section>
       </main>
     </div>
