@@ -43,8 +43,17 @@ $(document).ready(function() {
 
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
+    const tweetData = $("#tweet-text-field").val();
+
+    if (tweetData.length > 140) {
+      return alert("Please limit your tweet to 140 characters!")
+    }
+
+    if (!tweetData) {
+      return alert("The text field is empty!")
+    }
+
     const serializedData = $(".new-tweet form").serialize();
-    console.log(serializedData);
 
     $.ajax({
       type: "POST",
