@@ -45,7 +45,7 @@
       <!-- orange profile picture/name area -->
       <header class="profile-area">
         <div class="profile-image">
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex.png">
         </div>
         <div class="avatar-name">
           <h2><b>Amy</b> <span class="unbold">Mansell</span></h2>
@@ -54,7 +54,10 @@
 
       <!-- Page-specific (main) content here -->
       <main class="container">
-        <section class="new-tweet">         
+        <section class="new-tweet">
+          <!-- error message section -->
+          <section class="error">
+          </section>
           <form method="POST" action="/tweets">
             <textarea name="text" placeholder="What are you humming about?" id="tweet-text-field"></textarea>
             <div class="submit-container">

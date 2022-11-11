@@ -28,7 +28,7 @@ nav {
   display: flex;
   align-items: center;
   font-family: "Sans Source Pro", sans-serif;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .angle-down-arrow {
