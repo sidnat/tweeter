@@ -21,20 +21,34 @@ body {
   font-family: "Sans Source Pro", sans-serif;
 }
 
-nav {
-  font-family: "Bungee", sans-serif;
-}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.nav-spacer {
+.below-nav-bar {
   position: relative;
   top: 120px
 }
 
 main.container {
   justify-content: center;
-  margin: 0 5%;
+  margin: 2rem 5%;
   background-color: #f4f1ec;
+}
+
+/* Desktop view size adjustment */
+@media only screen and (min-width: 1024px) {
+
+  /* makes single column view into dual column */
+  .below-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5rem;
+  }
+
+  main.container {
+    margin-top: 7rem;
+    width: 100%;
+  }
 }

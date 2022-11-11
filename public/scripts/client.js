@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(document).ready(function() {
   const createTweetElement = (tweetData) => {
     const $tweet = `
@@ -16,7 +14,7 @@ $(document).ready(function() {
             <p>${tweetData.user.name}</p>
           </div>
           <p class="userhandle">${tweetData.user.handle}</p>
-        </header class="username">
+        </header>
         <div class="posted-tweet">
           <p>${tweetData.content.text}</p>
         </div>
@@ -35,12 +33,16 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // renders array of tweets into tweet cards.
   const renderTweets = (tweets) => {
+
+    // adds new tweet to the top of the stack
     for (let tweet of tweets) {
       $('.tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
+  // tweet submission form, text input field
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
     const tweetData = $("#tweet-text-field").val();
@@ -49,21 +51,26 @@ $(document).ready(function() {
       return alert("Please limit your tweet to 140 characters!");
     }
 
+    // if the text box is empty, return errr message
     if (!tweetData) {
       return alert("The text field is empty!");
     }
 
-    const serializedData = $(".new-tweet form").serialize();
+    const serialized = $(".new-tweet form").serialize();
+    const safeTweetData = $("<div>").text(serialized).val();
+
+    console.log(safeTweetData);
 
     $.ajax({
       type: "POST",
       url: "/tweets",
-      data: serializedData,
+      data: safeTweetData,
     }).done(() => {
+
+      // reloads page after new tweet is submitted
       location.reload();
     });
   });
-
 
   const loadTweets = () => {
     $.get("/tweets").then((data) => renderTweets(data));
@@ -71,4 +78,3 @@ $(document).ready(function() {
 
   loadTweets();
 });
-

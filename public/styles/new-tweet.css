@@ -1,3 +1,4 @@
+/* New tweet text input box */
 #tweet-text-field {
   background: transparent;
   width: 100%;
@@ -5,7 +6,6 @@
   border-bottom: 3px solid black;
   font-weight: bold;
 }
-/* SHOULD THIS BE AN INPUT OR A TEXT AREA */
 
 .tweet-button {
   padding: 0.25rem;
@@ -13,16 +13,26 @@
   background-color: #4056A1;
 }
 
+.tweet-button:hover {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #1497d9;
+}
+
+/* blue tweet button and charachter counter */
 .submit-container {
   font-family: "Bungee", sans-serif;
   display: flex;
   justify-content: space-between;
+  margin-top: 0.75rem;
 }
 
+/* empty section populated by tweets */
 .tweets-container {
   padding: 2rem 0;
 }
 
+/* generated tweet box, contains username/handle/body/timestamp/icons */
 article.tweet {
   margin-bottom: 2rem;
   border-style: solid;
@@ -33,6 +43,7 @@ article.tweet:hover {
   box-shadow: 10px 10px #c8cae2; 
 }
 
+/* profile pic, username, user handle */
 header.username {
   display: flex;
   padding: 0.25rem 1rem;
@@ -40,6 +51,7 @@ header.username {
   flex-direction: row;
 }
 
+/* top left of tweet box, pic and username */
 .pic-username {
   display: flex;
   flex-direction: row;
@@ -47,22 +59,26 @@ header.username {
   align-items: center;
 }
 
+/* top left of tweet box, pic */
 .profile-pic {
   display: flex;
   height: 3rem;
   width: 3rem;
 }
 
+/* top right of twee tbox, @example */
 .userhandle {
   color: #c7cfe4;
 }
 
+/* tweet word content */
 .posted-tweet {
   border-bottom: 3px solid black;
   margin: 0 1rem;
   padding: 1rem;
 }
 
+/* timestamp and icons */
 footer.metadata {
   display: flex;
   font-size: 15px;
@@ -83,5 +99,5 @@ footer.metadata {
 }
 
 .icon:hover {
-  color: orange;
+  color: #d79820;
 }

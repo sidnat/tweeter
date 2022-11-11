@@ -1,0 +1,44 @@
+/* Nav bar on mobile resolution */
+nav {
+  z-index: 9999;
+  height: 120px;
+  width: 100%;
+  background-color: #d79820;
+  background-image: url("/images/45-degree-fabric-light.png");
+  color: #FFFFFF;
+  font-family: "Bungee", sans-serif;
+  position: fixed;
+}
+
+/* TWEETER logo and "Write a new tweet" */
+.nav-content {
+  display: flex;
+  align-items: center;
+  padding: 1.5em;
+  justify-content: space-between;
+}
+
+/* TWEETER logo, top left */
+.nav-logo {
+  font-size: 1.5em;
+}
+
+/* "Write a new tweet", top left */
+.new-tweet-button {
+  display: flex;
+  align-items: center;
+  font-family: "Sans Source Pro", sans-serif;
+  flex-direction: column;  
+}
+
+.angle-down-arrow {
+  color: red;
+}
+
+/* Nav bar on desktop resolution */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+}

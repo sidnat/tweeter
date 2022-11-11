@@ -1,15 +1,36 @@
-header.profile-picture {
-  background-color: orange;
-  background-image: url("/images/3px-tile.png");
+/* orange square with hex profile picture and name */
+header.profile-area {
+  background-color: #d79820;
+  background-image: url("/images/45-degree-fabric-light.png");
   display: flex;
   height: 400px;
   width: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
   flex-direction: column;
 }
 
+/* hezagon profile image */
+.profile-image {
+  padding-top: 1rem;
+}
+
+/* user full name */
 .avatar-name {
   color: white;
   font-family: "Sans Source Pro", sans-serif;
+}
+
+/* unbold user last name */
+.unbold {
+  font-weight: normal;
+}
+
+/* Desktop resolution adjustments */
+@media only screen and (min-width: 1024px) {
+  header.profile-area {
+    margin-top: 7rem;
+    width: 800px;
+    margin-right: 2em;
+  }
 }
