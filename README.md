@@ -13,22 +13,22 @@ Tweeter is a simple, single-page Twitter clone using HTML, CSS, JS, jQuery and A
 4. Go to http://localhost:8080/ in your browser.
 
 5. Increase browser width for desktop layout
-!["screenshot of Desktop layout."](https://)
+!["screenshot of Desktop layout."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/desktop-layout.png)
 
 6. Decrease browser width for mobile layout
-!["screenshot of Mobile layout."](https://)
+!["screenshot of Mobile layout."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/mobile-layout.png)
 
 7. Type your tweet in the text field ("What are you humming about?)
-!["screenshot of text input area."](https://)
+!["screenshot of text input area."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/text-input-area.png)
 
 8. The character counter turns red when more than 140 characters have been typed, and it shows how many characters over the 140 limit have been typed.
-!["screenshot of character limit warning."](https://)
+!["screenshot of character limit warning."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/character-limit-warning.png)
 
 9. When a user submits a valid tweet, the list of tweets is updated.
-!["screenshot of posted tweet."](https://)
+!["screenshot of posted tweet."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/posted-tweet.png)
 
 10. When a user submits an invalid tweet (the tweet text area is empty or contains more than 140 characters), an appropriate error message is displayed.
-!["screenshot of empty text field warning."](https://)
+!["screenshot of empty text field warning."](https://raw.githubusercontent.com/sidnat/tweeter/master/docs/empty-text-field-warning.png)
 
 ## Dependencies
 
