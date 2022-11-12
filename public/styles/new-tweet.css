@@ -1,5 +1,12 @@
+.error {
+  display: none;
+}
+
+/* error message box */
 .error-message {
-  padding-left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   border-style: solid;
   border-width: 0.5rem;

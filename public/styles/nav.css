@@ -23,7 +23,7 @@ nav {
   font-size: 1.5em;
 }
 
-/* "Write a new tweet", top left */
+/* "Write a new tweet", top right */
 .new-tweet-button {
   display: flex;
   align-items: center;

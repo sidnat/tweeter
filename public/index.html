@@ -27,7 +27,6 @@
   </head>
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class="nav-content">
@@ -41,7 +40,6 @@
 
     <!-- Rest of page below nav bar -->
     <div class="below-nav-bar">
-
       <!-- orange profile picture/name area -->
       <header class="profile-area">
         <div class="profile-image">
@@ -57,6 +55,9 @@
         <section class="new-tweet">
           <!-- error message section -->
           <section class="error">
+            <div class="error-message">
+              <p class="error-message-text"></p>
+            </div>
           </section>
           <form method="POST" action="/tweets">
             <textarea name="text" placeholder="What are you humming about?" id="tweet-text-field"></textarea>

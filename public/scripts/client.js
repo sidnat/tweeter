@@ -5,12 +5,14 @@
  */
 
 $(document).ready(function() {
-  const escape = function (str) {
+
+  // cross-site scripting escape function
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
   // returns tweet card html element
   const createTweetElement = (tweetData) => {
     const $tweet = `
@@ -42,52 +44,50 @@ $(document).ready(function() {
 
   // renders array of tweets into tweet cards.
   const renderTweets = (tweets) => {
-    $('.tweets-container').empty()
+    $(".tweets-container").empty();
 
     // adds new tweet card to the top of the stack
     for (let tweet of tweets) {
-      $('.tweets-container').prepend(createTweetElement(tweet));
+      $(".tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
   // tweet submission form, text input field
-  $('.new-tweet form').submit(function(event) {
+  $(".new-tweet form").submit(function(event) {
     event.preventDefault();
-    const tweetData = $("#tweet-text-field").val();
 
-    // //  use jQuery to insert the error message text into the error element. Then show the error element.
-    // if (tweetData.length > 140) {
-    //   $('.error').empty()
-    //   const $error = `
-    //   <div class="error-message">
-    //     <p>Error: Please limit your tweet to 140 characters!</p>
-    //   </div>
-    //   `
-    //   $(".error").append($error);
-    //   return $(".error").slideDown();
-    // }
+    // error message box slides up
+    $(".error").slideUp(() => {
+      const tweetData = $("#tweet-text-field").val();
 
-    // // if the text box is empty, return errr message
-    // if (!tweetData) {
-    //   $('.error').empty()
-    //   const $error = `
-    //   <div class="error-message">
-    //     <p>Error: The text field is empty!</p>
-    //   </div>
-    //   `
-    //   $(".error").append($error).slideDown(slideDown);
-    // }
+      const errorMessage = (errMsg) => {
+        $(".error-message-text").html(errMsg);
+        $(".error").slideDown();
+        return;
+      }
 
-    const serialized = $(".new-tweet form").serialize();
+      if (tweetData.length > 140) {
+        return errorMessage("Error: Please don't go over 140 character limit!");
+      }
 
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: serialized,
-    }).done(() => {
+      // if the text box is empty, return err message
+      if (!tweetData) {
+        return errorMessage("Error: The text field is empty!");
+      }
 
-      // reloads page after new tweet is submitted
-      loadTweets();
+      const serializedTweetData = $(".new-tweet form").serialize();
+
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: serializedTweetData,
+      }).done(() => {
+
+        // loads tweets again and clears text field
+        loadTweets();
+        $("#tweet-text-field").val("");
+        $(".counter").val("140");
+      });
     });
   });
 
